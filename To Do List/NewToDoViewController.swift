@@ -9,12 +9,33 @@ import UIKit
 
 class NewToDoViewController: UIViewController {
 
+    @IBOutlet weak var ToDoDescriptionTextField: UITextField!
+    @IBOutlet weak var ToDoPriorityPicker: UIPickerView!
+    @IBOutlet weak var ToDoFinalDatePicker: UIDatePicker!
+
+    @IBAction func SaveButton(_ sender: Any) {
+            
+        if let text = ToDoDescriptionTextField.text{
+            let list = ListOfItens()
+            let description = text
+            let priority = Priority.noPriority
+            let finalDate = ToDoFinalDatePicker.date
+            let toDoItem = ToDoItem(description: description, priority: priority, finalDate: finalDate)
+            list.save(item: toDoItem)
+            ToDoDescriptionTextField.text = ""
+        }
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
     /*
     // MARK: - Navigation

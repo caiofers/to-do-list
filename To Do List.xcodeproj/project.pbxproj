@@ -17,6 +17,7 @@
 		DF3A0DBE2609713F00F487A3 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3A0DBD2609713F00F487A3 /* ToDoItem.swift */; };
 		DF3A0DC1260971DA00F487A3 /* ToDoPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3A0DC0260971DA00F487A3 /* ToDoPriority.swift */; };
 		DF3A0DC4260972C800F487A3 /* ToDoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3A0DC3260972C800F487A3 /* ToDoItemCell.swift */; };
+		DF3A0DC72609839400F487A3 /* ListOfItens.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3A0DC62609839400F487A3 /* ListOfItens.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		DF3A0DBD2609713F00F487A3 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		DF3A0DC0260971DA00F487A3 /* ToDoPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoPriority.swift; sourceTree = "<group>"; };
 		DF3A0DC3260972C800F487A3 /* ToDoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemCell.swift; sourceTree = "<group>"; };
+		DF3A0DC62609839400F487A3 /* ListOfItens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfItens.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				DF3A0DBA26096DAC00F487A3 /* NewToDoViewController.swift */,
 				DF3A0DBD2609713F00F487A3 /* ToDoItem.swift */,
 				DF3A0DC0260971DA00F487A3 /* ToDoPriority.swift */,
+				DF3A0DC62609839400F487A3 /* ListOfItens.swift */,
 			);
 			path = "To Do List";
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF3A0DC72609839400F487A3 /* ListOfItens.swift in Sources */,
 				DF3A0DAA2609648B00F487A3 /* ViewController.swift in Sources */,
 				DF3A0DBB26096DAC00F487A3 /* NewToDoViewController.swift in Sources */,
 				DF3A0DC4260972C800F487A3 /* ToDoItemCell.swift in Sources */,

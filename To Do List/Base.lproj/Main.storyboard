@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,31 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="ctG-8c-RTA">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ob-18-d8j">
-                                    <rect key="frame" x="196.5" y="3.5" width="21.5" height="37"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                    <color key="tintColor" red="1" green="0.75602402359999998" blue="0.03354726341" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <state key="normal">
-                                        <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
-                                    </state>
-                                    <connections>
-                                        <segue destination="bV0-r7-dj0" kind="show" id="8Is-D0-fCU"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstItem="0ob-18-d8j" firstAttribute="centerX" secondItem="ctG-8c-RTA" secondAttribute="centerX" id="PUZ-45-sqe"/>
-                                <constraint firstItem="0ob-18-d8j" firstAttribute="centerY" secondItem="ctG-8c-RTA" secondAttribute="centerY" id="jup-NO-pf4"/>
-                            </constraints>
-                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseToDoCell" rowHeight="85" id="lS0-7F-wIF" customClass="ToDoItemCell" customModule="To_Do_List" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="85"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lS0-7F-wIF" id="WRW-ZZ-nPX">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
@@ -99,7 +76,13 @@
                             <outlet property="delegate" destination="bM2-Sq-d6U" id="nfK-ug-cAt"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="To Do List" id="EKO-xu-kYT"/>
+                    <navigationItem key="navigationItem" title="To Do List" id="EKO-xu-kYT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="CXK-Do-Y4e">
+                            <connections>
+                                <segue destination="bV0-r7-dj0" kind="show" id="jTK-U3-Qn4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nXq-KK-nRv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -198,6 +181,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="SaveButton:" destination="bV0-r7-dj0" eventType="touchUpInside" id="0iw-Mq-z8O"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tMB-Cc-fyu"/>
@@ -211,6 +197,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yqb-9Y-csZ"/>
+                    <connections>
+                        <outlet property="ToDoDescriptionTextField" destination="cbm-Wb-pkb" id="MMT-ch-WuB"/>
+                        <outlet property="ToDoFinalDatePicker" destination="MtV-S9-zob" id="loh-kP-bMe"/>
+                        <outlet property="ToDoPriorityPicker" destination="wFf-oK-rpZ" id="jqy-sM-doK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYi-9O-0Ng" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -244,7 +235,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

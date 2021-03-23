@@ -9,19 +9,16 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-    var listOfToDo: [ToDoItem] = []
+    var listOfToDo: [ToDoItemCodable] = []
+    let listObj = ListOfItens()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        populate()
     }
     
-    func populate() -> Void {
-        listOfToDo.append(ToDoItem(description: "Teste1"))
-        listOfToDo.append(ToDoItem(description: "Teste2"))
-        listOfToDo.append(ToDoItem(description: "Teste3"))
-        listOfToDo.append(ToDoItem(description: "Teste4"))
-        listOfToDo.append(ToDoItem(description: "Teste5"))
+    override func viewDidAppear(_ animated: Bool) {
+        listOfToDo = listObj.listAll()
+        tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -36,13 +33,20 @@ class ViewController: UITableViewController {
         let reusableCell = "reuseToDoCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: reusableCell, for: indexPath) as! ToDoItemCell
         let toDoItem = listOfToDo[indexPath.row]
-        cell.ToDoDescriptionLabel.text = toDoItem.description
-        //cell.ToDoPriorityLabel.text = toDoItem.priority
-        //cell.ToDoFinalDateLabel.text = toDoItem.finalDate
+        cell.ToDoDescriptionLabel.text = toDoItem.todoDescription
+        cell.ToDoPriorityLabel.text = toDoItem.priority
+        cell.ToDoFinalDateLabel.text = toDoItem.finalDate
     
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            listObj.remove(at: indexPath.row)
+            listOfToDo = listObj.listAll()
+            tableView.reloadData()
+        }
+    }
 
 }
 

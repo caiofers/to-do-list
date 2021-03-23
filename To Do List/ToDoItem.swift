@@ -8,12 +8,12 @@
 import Foundation
 
 class ToDoItem {
-    var description: String!
+    var todoDescription: String!
     var priority: Priority?
     var finalDate: Date?
     
     init(description: String, priority: Priority? = nil, finalDate: Date? = nil) {
-        self.description = description
+        self.todoDescription = description
         self.priority = priority
         self.finalDate = finalDate
     }

@@ -8,7 +8,7 @@
 import Foundation
 
 enum Priority {
-    case noPrioroty
+    case noPriority
     case lowPriority
     case mediumPriority
     case highPriority
